@@ -69,10 +69,10 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    // fungsi untuk menambah nyawa
+    // Increase the health after collecting Health Booster item
     public void Healing()
     {
-        //mengurangi health
+        //increase by 40 units
         int newHealth = currentHealth + 40;
         if (newHealth >= 100)
         {
@@ -83,33 +83,30 @@ public class PlayerHealth : MonoBehaviour
             currentHealth = newHealth;
         }
 
-        //Merubah tampilan dari health slider
+        //update the value of the health slider
         healthSlider.value = currentHealth;
     }
 
 
     void Death()
     {
+        // Player death effect
         isDead = true;
 
         playerShooting.DisableEffects ();
 
-        //mentrigger animasi Die
         anim.SetTrigger("Die");
 
-        //Memainkan suara ketika mati
         playerAudio.clip = deathClip;
         playerAudio.Play();
 
-        //mematikan script player movement
         playerMovement.enabled = false;
-
         playerShooting.enabled = false;
     }
 
     public void RestartLevel()
     {
-        //meload ulang scene dengan index 0 pada build setting
+        //Restart the gameplay after death
         SceneManager.LoadScene(0);
     }
 }
