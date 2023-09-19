@@ -6,12 +6,11 @@ public class InputHandler : MonoBehaviour
     public PlayerMovement playerMovement;
     public PlayerShooting playerShooting;
 
-    //Queue untuk menyimpan list command
+    //Queue to store commands
     Queue<Command> commands = new Queue<Command>();
 
     void FixedUpdate()
     {
-        //Menghandle input movement
         Command moveCommand = InputMovementHandling();
         if (moveCommand != null)
         {
@@ -23,7 +22,6 @@ public class InputHandler : MonoBehaviour
 
     void Update()
     {
-        //Mengahndle shoot
         Command shootCommand = InputShootHandling();
         if (shootCommand != null)
         {
@@ -33,7 +31,6 @@ public class InputHandler : MonoBehaviour
 
     Command InputMovementHandling()
     {
-        //Check jika movement sesuai dengan key nya
         if (Input.GetKey(KeyCode.D))
         {
             return new MoveCommand(playerMovement, 1, 0);
@@ -63,7 +60,7 @@ public class InputHandler : MonoBehaviour
 
     Command Undo()
     {
-        //Jika Queue command tidak kosong, lakukan perintah undo
+        //If the queue command is not empty
         if (commands.Count > 0)
         {
             Command undoCommand = commands.Dequeue();
@@ -74,7 +71,6 @@ public class InputHandler : MonoBehaviour
 
     Command InputShootHandling()
     {
-        //Jika menembak trigger shoot command
         if (Input.GetButtonDown("Fire1"))
         {
             return new ShootCommand(playerShooting);

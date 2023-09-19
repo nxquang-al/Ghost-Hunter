@@ -10,19 +10,17 @@
         this.v = _v;
     }
 
-    //Trigger perintah movement
+    //Trigger movement function
     public override void Execute()
     {
         playerMovement.Move(h, v);
-        //Menganimasikan player
         playerMovement.Animating(h, v);
     }
 
     public override void UnExecute()
     {
-        //Invers arah dari movement player
+        //Inverse player's direction
         playerMovement.Move(-h, -v);
-        //Menganimasikan player
         playerMovement.Animating(h, v);
     }
 }
