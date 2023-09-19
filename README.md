@@ -11,7 +11,7 @@
 
 ## Introduction
 
-Experience the spine-tingling world of "3D Ghost Hunter," a game developed using Unity. As a fearless paranormal investigator, you'll use cutting-edge technology to explore haunted locations, solve puzzles, and confront malevolent spirits. Unity's immersive graphics and game play make this a chilling adventure you won't forget. Are you ready to become the ultimate ghost hunter?
+You accidentally shrink, everything in your room gets bigger. You are enjoying touring the room but suddenly scary noises appear. Out of the darkness, monsters suddenly appeared. You try to run away from them but they are too numerous, gradually surrounding you. You want to escape this nightmare. But the only way is to defeat them!!
 
 ## How to play
 
