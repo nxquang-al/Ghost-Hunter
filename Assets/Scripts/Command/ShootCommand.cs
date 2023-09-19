@@ -10,7 +10,6 @@
 
     public override void Execute()
     {
-        //Player menembak
         playerShooting.Shoot();
     }
 

@@ -10,16 +10,14 @@ public class CameraFollow : MonoBehaviour
 
     private void Start()
     {
-        // Mendapatkan offset antara target dan camera
+        // Get the offset between the target and the camera
         offset = transform.position - target.position;
     }
 
     private void FixedUpdate()
     {
-        // Menapatkan posisi untuk camera
+        // Update a new position for the camera
         Vector3 targetCamPos = target.position + offset;
-
-        // Set posisi camera dengan smoothing
         transform.position = Vector3.Lerp(transform.position, targetCamPos, smoothing * Time.deltaTime);
     }
 }
